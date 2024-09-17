@@ -34,3 +34,21 @@ cd nextjs14-cj-clone
 
 
 ### Testing
+#### . 필수 라이브러리 설치 (typescript 기준)
+```
+    npm install --save-dev @testing-library/react @testing-library/jest-dom jest jest-environment-jsdom
+    npm install --save-dev @types/jest
+    npm install --save-dev @types/testing-library__jest-dom
+```
+- @testing-library/react : React 컴포넌트를 테스트하기 위한 라이브러리입니다. 실제 브라우저 환경을 시뮬레이션하는 방식으로 컴포넌트가 UI에서 어떻게 동작하는지를 테스트할 수 있게 해줍니다. 사용자 인터페이스의 렌더링 및 상호작용을 확인하기 위한 함수들을 제공.
+  주요 함수:
+  - render: 컴포넌트를 가상 DOM에 렌더링.
+  - screen: 렌더링된 컴포넌트에서 요소를 찾는 다양한 방법을 제공 (예: screen.getByText).
+  - fireEvent: 사용자 이벤트(클릭, 입력 등)를 트리거하는 데 사용.
+- @testing-library/jest-dom : jest-dom은 Jest와 함께 사용되는 매처를 추가하는 라이브러리
+  - 주요 matcher
+    - toBeInTheDocument: 요소가 DOM에 존재하는지 확인합니다.
+    - toHaveAttribute: 요소가 특정 속성을 가지고 있는지 확인합니다.
+    - toHaveTextContent: 요소가 특정 텍스트를 포함하는지 확인합니다.
+
+
