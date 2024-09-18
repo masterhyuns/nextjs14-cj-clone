@@ -37,184 +37,88 @@
     }
 }
 
-.top-global-communication {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    transition: none;
-
-    &.dark {
-        color: #fff;
-    }
-}
 
 
-.top-language {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-    width: 42px;
-    height: 80px;
-    transition: none;
-
-    &.dark {
-        color: #fff;
-    }
-}
-
-.top-search {
-    width: 42px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.top-search.dark {
-    color: #fff;
-}
-
-.logo {
-    img {
-        display: inline-block;
-        width: 190px;
-        height: 60px;
-    }
-}
-
-.cookie-layer {
-    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.5);
-    position: fixed;
-    width: 100vw;
-    bottom: 0;
-    z-index: 3000;
-    height: 120px;
-    min-width: 1240px;
-    background: #ffffff;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: transform 0.5s ease, opacity 0.5s ease;
-
-    &.show {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
 
 
-.cookie-btn {
-    min-width: 133px;
-    height: 45px;
-    line-height: 45px;
-    color: #fff;
-    border-radius: 45px;
-    background: #5E5B57;
-    padding: 0 36px;
-    border: 0 none;
-    cursor: pointer;
 
-    &.accept {
-        background: #EF151E;
-    }
 
-    &::selection {
-        background-color: #ef151e;
-        color: #ffffff;
-    }
 
-}
 
+
+
+
+
+/* overlay가 기본적으로 숨겨져 있음 */
 .overlay {
-    visibility: hidden;
-    position: absolute;
+    visibility: hidden;  /* 기본 상태에서 숨김 */
+    position: fixed;  /* 위치를 절대값으로 설정 */
     left: 0;
     right: 0;
     bottom: 0;
     top: 0;
-    z-index: 100;
-    background-color: rgba(74,76,79,.84);
-    backface-visibility: hidden;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    &.show {
-        visibility: visible;
-    }
+    z-index: 100;  /* 다른 요소 위에 오도록 z-index 설정 */
+    background-color: rgba(74, 76, 79, 0.84);  /* 반투명 배경 */
+    backface-visibility: hidden;  /* 백페이스 가시성 숨김 */
+    transition: transform 0.5s, visibility 0.5s;
+    opacity: 0;  /* 투명 상태 */
 }
 
-.search-layer {
-    position: fixed;
-    box-sizing: content-box;
-    width: 100vw;
-    height: 82px;
-    top: 0;
-    background-color: #f3f3f3;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    visibility: hidden;
-    z-index: 3000;
-    opacity: 0;
+/* show 클래스가 추가되면 보이도록 설정 */
+.overlay.show {
+    visibility: visible;  /* 보이게 설정 */
+    opacity: 1;  /* 불투명 상태 */
+}
 
-    &.show {
-        visibility: visible;
-        z-index: 3000;
-        opacity: 1;
-    }
-    .content {
+.youtube-wrapper {
+    background: rgba(12,8,4,.85);
+    width: 100%;
+    height: 127px;
+    display: flex;
+    color: #ffffff;
+    .title {
         display: flex;
+        flex: 1;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        height: 100%;
-        input {
-            height: 46px;
-            width: 600px;
-            padding:0 20px;
-            font-size: 1.2rem;
-
-            &::placeholder {
-                opacity: 1;
-                color: #888;
-                font-weight: 600;
-            }
-            &::selection {
-                background-color: #ef151e;
-                color: #ffffff;
-            }
-        }
-        button.search {
-            background-color: #ef151e;
-            color: #ffffff;
-            width: 46px;
-            height: 46px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-    button.close {
-        display: block;
-        position: absolute;
-        top: 18px;
-        right: 86px;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        font-size: 1.3rem;
-        &::before {
+        font-size: 2rem;
+        font-weight: 500;
+        &:after{
+            content: '';
             position: absolute;
-            bottom: -24px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            content: "";
-            background-color: #ef151e;
+            top: 22px;
+            left: 50%;
+            width: 1px;
+            height: calc(100% - 44px);
+            background: #939392;
         }
     }
-
+    .banner-list {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        ul {
+            display: flex;
+            justify-content: space-around;
+            gap:10px;
+            li a{
+                display: flex;
+                gap: 10px;
+                .logo {
+                    background: #ffffff;
+                    width: 96px;
+                    height: 96px;
+                    border-radius: 50%;
+                }
+                .desc {
+                    display: flex;
+                    gap: 10px;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+        }
+    }
 }
 
