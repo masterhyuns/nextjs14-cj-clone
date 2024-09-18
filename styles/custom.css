@@ -1,0 +1,220 @@
+/* styles.css */
+.icon {
+    min-width: 18px;
+    min-height: 18px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    line-height: 1;
+    vertical-align: middle;
+    transition: opacity 0.2s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: inline-block;
+}
+
+.icon em {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    position: absolute;
+    padding: 0;
+    word-break: keep-all;
+    white-space: nowrap;
+    border: 0;
+    width: 0 !important;
+}
+
+@media screen {
+    .icon em {
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        color: transparent;
+    }
+}
+
+.top-global-communication {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    transition: none;
+
+    &.dark {
+        color: #fff;
+    }
+}
+
+
+.top-language {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 80px;
+    transition: none;
+
+    &.dark {
+        color: #fff;
+    }
+}
+
+.top-search {
+    width: 42px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.top-search.dark {
+    color: #fff;
+}
+
+.logo {
+    img {
+        display: inline-block;
+        width: 190px;
+        height: 60px;
+    }
+}
+
+.cookie-layer {
+    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    z-index: 3000;
+    height: 120px;
+    min-width: 1240px;
+    background: #ffffff;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.cookie-btn {
+    min-width: 133px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    border-radius: 45px;
+    background: #5E5B57;
+    padding: 0 36px;
+    border: 0 none;
+    cursor: pointer;
+
+    &.accept {
+        background: #EF151E;
+    }
+
+    &::selection {
+        background-color: #ef151e;
+        color: #ffffff;
+    }
+
+}
+
+.overlay {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(74,76,79,.84);
+    backface-visibility: hidden;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    &.show {
+        visibility: visible;
+    }
+}
+
+.search-layer {
+    position: fixed;
+    box-sizing: content-box;
+    width: 100vw;
+    height: 82px;
+    top: 0;
+    background-color: #f3f3f3;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    visibility: hidden;
+    z-index: 3000;
+    opacity: 0;
+
+    &.show {
+        visibility: visible;
+        z-index: 3000;
+        opacity: 1;
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        input {
+            height: 46px;
+            width: 600px;
+            padding:0 20px;
+            font-size: 1.2rem;
+
+            &::placeholder {
+                opacity: 1;
+                color: #888;
+                font-weight: 600;
+            }
+            &::selection {
+                background-color: #ef151e;
+                color: #ffffff;
+            }
+        }
+        button.search {
+            background-color: #ef151e;
+            color: #ffffff;
+            width: 46px;
+            height: 46px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    button.close {
+        display: block;
+        position: absolute;
+        top: 18px;
+        right: 86px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        font-size: 1.3rem;
+        &::before {
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            content: "";
+            background-color: #ef151e;
+        }
+    }
+
+}
+

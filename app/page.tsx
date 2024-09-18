@@ -1,5 +1,7 @@
 export default function Home() {
   return (
-    <div>안녕하세요.</div>
+    <div className={"w-full  h-[400px]"}>
+        <img src={"/images/main_slider_01.jpg"} width={"100%"} height={"400px"}/>
+    </div>
   );
 }

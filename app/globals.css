@@ -27,6 +27,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+html, body {
+  overscroll-behavior: none; /* 기본 스크롤 바운싱 방지 */
+}
 body {
   line-height: 1;
 }
@@ -75,3 +78,20 @@ body {
 .category-item {
   @apply flex flex-col items-center;
 }
+/*.cookie-layer {
+  box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  z-index: 50;
+  height: 120px;
+  min-width: 1240px;
+  background: #ffffff;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: transform 0.5s, visibility 0.5s;
+}
+.cookie-layer.show {
+  transform: translateY(0);
+  visibility: visible;
+}*/
