@@ -13,23 +13,24 @@ const config: Config = {
         foreground: 'var(--foreground)',
       },
       backgroundImage: {},
-      width: {
-        full: '100%', // wh-full 중 width 부분
+      keyframes: {
+        slideUp: {
+          '0%': {
+            transform: 'translateY(50px)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: '1',
+          },
+        },
       },
-      height: {
-        full: '100%', // wh-full 중 height 부분
+      animation: {
+        'slideup-1/2': 'slideUp 0.5s ease-out',
+        'slideup-1': 'slideUp 1s ease-out',
       },
     },
   },
-  plugins: [
-    function ({ addUtilities }: any) {
-      addUtilities({
-        '.wh-full': {
-          width: '100%',
-          height: '100%',
-        },
-      });
-    },
-  ],
+  plugins: [],
 };
 export default config;

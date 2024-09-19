@@ -1,20 +1,25 @@
 'use client';
-import { FC } from 'react';
+import { FC, ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-interface ContentTypeAProps {}
+interface ContentTypeAProps {
+  bar?: boolean; // Bar 여부
+  title: string; // 제목
+  children: ReactNode; // 내용
+}
 
-const ContentTypeA: FC<ContentTypeAProps> = () => {
+const ContentTypeA: FC<ContentTypeAProps> = ({
+  bar = false,
+  title,
+  children,
+}) => {
   return (
-    <Container>
-      <Bar />
-      <Title>ABOUT</Title>
-      <Desc>
-        건강, 즐거운, 편리를 창조하는 <br /> 글로벌 식품·BIO 기업
-        CJ제일제당입니다.
-      </Desc>
+    <Container className={`animate-slideup-1/2`}>
+      {bar && <Bar />}
+      <Title>{title}</Title>
+      <Desc>{children}</Desc>
       <Button>
         <span>Find out more</span>
         <FontAwesomeIcon icon={faArrowRight} />
@@ -59,6 +64,7 @@ const Desc = styled.div`
   text-align: center;
 `;
 const Button = styled.a`
+  margin-top: 60px;
   border: 1px solid #ef151e;
   padding: 0 24px 0 20px;
   display: flex;
